@@ -6,6 +6,11 @@ public class CDRepository : ICDRepository
 {
     private readonly CDContext _dbContext;
 
+    public CDRepository(CDContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
+
     public List<CD> GetCDs()
     {
         return _dbContext.CD.ToList();
